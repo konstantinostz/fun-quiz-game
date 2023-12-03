@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/mystyle.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>Quizz game</title>
+</head>
+<body>
+  
+    <div class="logo">
+      <img src="img/Quiz_game-removebg-preview.png" width="200px" height="200px">
+    </div>
+
+
+  <div class="settings"> 
+    <ul>
+    <P class="p1">Number of Questions</P>
+    <li><input type="number" id="numberOfQuesions" max="50" min="1" placeholder="Enter a number"></li>
+
+   <p class="p2">Select Category: </p>
+   <li>
+    <select name="category" id="category">
+    </select>
+  </li>
+  <p class="p3">Select Difficulty:  </p>
+  <li>
+    <select name="difiicult" id="difiicultly" autocomplete="off">
+      <option id="default">Select</option>
+      <option value="easy" id="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </li>
+  </ul>
+  
+
+  </div>
+  <div class="btn-start">
+  <button id="startGame">Lets start</button>
+</div>
+
+  
+
+</body>
+<script src="js/quiz.js"></script>
+</html>

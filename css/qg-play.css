@@ -1,0 +1,386 @@
+body{
+  background-color: #0F1316;
+}
+
+#progress-bar-holder{
+
+  float: left;
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: left .4s ease-out,opacity .4s ease-out;
+  position: relative;
+  opacity: 1;
+  left: 0;
+  max-width: 100%;
+  margin-top: 2rem;
+
+}
+
+
+
+
+#progress-bar {
+
+
+  height: 22px;
+  width: 500px;
+  border-radius: 100px;
+  margin: 0 auto 4rem auto;
+  position: relative;
+  background: #151b24;
+  max-width: calc(100% - 6rem);
+
+
+}
+
+
+
+
+#progress-bar-percentage {
+  position: absolute;
+  background: linear-gradient(90deg,#00a1ff,#2cefff);
+  transition: width .15s ease-out;
+  height: calc(100% - 8px);
+  max-width: calc(100% - 8px);
+  width: 50px;
+  top: 0;
+  height: 100%;
+  will-change: width;
+  left: 0;
+  border-radius: 100px;
+}
+
+
+
+
+#question-number {
+  height: 100%;
+  display: flex;
+  gap: 3px;
+  width: 100%;
+  align-items: flex-end;
+  padding-top: 3rem;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+
+
+
+#question-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+
+#initial-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+#question {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fl {
+  float: left;
+  width: 100%;
+}
+
+#question .question-title {
+  line-height: 2.75rem;
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+}
+
+
+
+#question .question-options {
+  margin: 2rem 0;
+  float: left;
+  width: calc(100% + 1.25rem);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+#question .option::after {
+  content: '';
+  height: 21px;
+  width: 21px;
+  position: absolute;
+  top: 1rem;
+  box-sizing: border-box;
+  border-radius: 100px;
+  right: 12px;
+  border: 1px solid #4e5064c7;
+}
+
+
+#question .option {
+  width: 100%;
+  transition: all .1s ease-out;
+  display: block;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 1.125rem;
+  position: relative;
+  cursor: pointer;
+  margin: 0 1.25rem 1rem 0;
+  border-radius: 14px;
+  line-height: 1.75rem;
+  background: #151b24;
+  padding: .75rem 2.5rem .75rem .75rem;
+  font-weight: 500;
+}
+
+
+.question-options .option {
+  min-width: calc(50% - 1.25rem);
+  margin: 4rem 1rem 0 0;
+  position: relative;
+}
+
+
+.hover-button {
+  box-shadow: none;
+  background: 0 0;
+  transform-style: preserve-3d;
+  padding: 0;
+  height: auto;
+  float: none;
+}
+button {
+  cursor: pointer;
+  float: left;
+  background: #027cfd;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  padding: .25rem 1rem;
+  border-radius: 14px;
+  width: auto;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  margin: 1rem 0 0 0;
+  box-shadow: 0 2px 20px #000000c4;
+  font-size: 1rem;
+}
+
+
+#question-submit button span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600%;
+  height: 200%;
+  background: linear-gradient(90deg,#74fa60,#74fa60,#36e19f,#47ca33);
+  animation: colorCycle 8s infinite alternate;
+  z-index: -2;
+}
+
+
+#submit-question-cover::before {
+  margin: 0 .5rem 0 0;
+}
+
+
+#submit-question-cover::before {
+  content: url('data:image/svg+xml; utf8, <svg class="svg-inline--fa fa-stars" width="16" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="stars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="x0365930" d="M364.2 267.2l-104.8-15.28L212.6 156.7C208.7 148.8 200.7 143.9 191.9 143.9C183.2 143.8 175.1 148.8 171.4 156.7L124.5 251.1L19.71 267.2C.9566 269.9-6.618 293.1 7.007 306.5l75.87 74l-17.1 104.6c-1.25 6.75 .5878 13.51 4.963 18.63C74.22 509 80.64 512 87.52 512c3.625 0 7.436-.9554 10.69-2.705l93.79-49.38l93.74 49.38c3.25 1.625 6.991 2.675 10.62 2.675c6.75 0 13.23-2.97 17.61-8.22c4.25-5.125 6.273-11.98 5.148-18.61L301.2 380.5l75.92-74C390.6 293 383.1 269.1 364.2 267.2zM266.7 369.3l17.62 103.1l-92.5-48.75l-92.5 48.75l17.62-103.1L42.22 296.1l103.4-15l46.38-93.88l46.13 93.88l103.5 15L266.7 369.3zM256 112h64v64C320 184.8 327.2 192 336 192S352 184.8 352 176v-64h64c8.844 0 16-7.156 16-16s-7.154-15.1-15.1-15.1L352 80v-64C352 7.156 344.8 0 336 0S320 7.156 320 16v64l-63.99 .0022C247.2 80 240 87.16 240 96S247.2 112 256 112zM496 208h-32v-32c0-8.844-7.155-15.1-15.1-15.1S432 167.2 432 176v32h-32c-8.844 0-15.1 7.162-15.1 16.01S391.2 240 400 240h32v32c0 8.844 7.158 16.01 16 16.01S464 280.8 464 272v-32h32c8.844 0 16-7.151 16-15.99S504.8 208 496 208z"></path></svg>');
+}
+
+
+#question-submit button span, .quiz-button {
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+}
+
+
+#submit-individual-question span, #submit-question span {
+  filter: drop-shadow(#74fa6038 0 10px 15px);
+}
+
+
+
+.hover-button > span {
+  font-size: 1rem;
+  padding: .75rem 1.5rem;
+  color: #365930;
+  line-height: 1.5rem;
+  font-size: 1.125rem;
+  will-change: transform,filter;
+  display: block;
+  float: none;
+  margin: 0;
+  transition: all .15s ease-out;
+  height: auto;
+  border-radius: 100px;
+  border-radius: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  transform: rotateX(0) rotateY(0) scale(1);
+  filter: drop-shadow(0 15px 15px rgba(0,0,0,.3));
+  font-weight: 800;
+  perspective-origin: 0 0;
+  letter-spacing: 0;
+  background: #74fa60;
+  box-shadow: 0 3px 0 #28811a,0 -3px 0 #53bd43,3px 0 0 #42a633,-3px 0 0 #42a633,0 2px 20px #79fa6430;
+  color: #265b1f;
+}
+
+
+
+button {
+  cursor: pointer;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+#question .question-options .option:hover{
+  background-color: #004CFF;
+}
+
+
+
+#question .question-options .option:hover::after{
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="white" d="M443.3 100.7C449.6 106.9 449.6 117.1 443.3 123.3L171.3 395.3C165.1 401.6 154.9 401.6 148.7 395.3L4.686 251.3C-1.562 245.1-1.562 234.9 4.686 228.7C10.93 222.4 21.06 222.4 27.31 228.7L160 361.4L420.7 100.7C426.9 94.44 437.1 94.44 443.3 100.7H443.3z"/></svg>');
+  background-color: transparent;
+  
+  
+
+}
+
+
+
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: none;
+  
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+.change {
+  background-color: #004CFF;
+}
+
+
+.blue-background {
+
+}
+
+/* Εμφάνιση του check όταν ο χρήστης κάνει κλικ */
+#question .question-options .option.blue-background.clicked::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="16" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="white" d="M443.3 100.7C449.6 106.9 449.6 117.1 443.3 123.3L171.3 395.3C165.1 401.6 154.9 401.6 148.7 395.3L4.686 251.3C-1.562 245.1-1.562 234.9 4.686 228.7C10.93 222.4 21.06 222.4 27.31 228.7L160 361.4L420.7 100.7C426.9 94.44 437.1 94.44 443.3 100.7H443.3z"/></svg>');
+  background-color: transparent;
+}
+
+
+.custom-font-size{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+/* CSS */
+.button-33 {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 15px;
+}
+
+.button-33:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+
+
+
+.wait{
+  font-size: 18px;
+  background-color: darkblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-family: inherit;
+  position: absolute;
+  left: 55%;
+  top: 90%;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+ 
+}
+
+
+.wait i{
+  color: yellow;
+}
+
+
+.music{
+  background-color: red;
+  margin-left: 20px;
+  margin-top: 20px;
+  
+}
+
+
+
